@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 offset-4">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle>{{selectedSource}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <button class="dropdown-item" *ngFor="let id of sourceOptions" (click)="selectSource(id.id)" >{{id.name}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<div class="row justify-content-center">
+<div class="col-8 card mb-3">
+  <div *ngFor="let article of articlesArray">
+  <img src="{{article.urlToImage}}" class="mx-auto d-block headline-image" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{article.title}}</h5>
+    <p class="card-text text-center">{{article.content}}</p>
+    <p class="text-center"><a href="{{article.url}}">Read more here...</a></p>
+    <p class="card-text text-center"><small class="text-muted">{{article.author}}</small></p>
+  </div>
+  <hr>
+</div>
+</div>
+</div>
